@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{projets.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{projets.createdAt|date('d-m-Y H:i:s')}}</h6>
+  <img src="{{projets.image}}" class="card-img-top" alt="...">
+  <p class="card-text">{{projets.content|raw}}</p>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MyEntrepriseController!{% endblock %}
+
+{% block body %}
+{% for info in projets %}
+        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><a href={{ path('project_page', {'id':info.id})}}>{{info.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{info.createdAt|date('d-m-Y H:i:s')}}</h6>
+  <img src="{{info.image}}" class="card-img-top" alt="...">
+  <p class="card-text">{{info.content|raw}}</p>
+  </div>
+</div>
+</div>
+        {% endfor %}
+{# <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{projets.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{projets.createdAt|date('d-m-Y H:i:s')}}</h6>
+  <img src="{{projets.image}}" class="card-img-top" alt="...">
+  <p class="card-text">{{projets.content|raw}}</p>
+  </div>
+</div>
+</div> #}
+{% endblock %}
